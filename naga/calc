@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> CALCULATOR </title>
+</head>
+<body>
+
+Number 1:  <br>   
+  <input type="Number" id="num1">
+
+ Number 2:  <br>   
+  <input type="Number" id="num2">
+  <input type="button" value="Add">Add
+  <input type="button" value="Sub">Sub
+  <input type="button" value="Mul"> Mul<br>
+  <input type="button" value="And">And
+  <input type="button" value="OR"> OR<br>
+  <input type="button" value="Greater">Greater
+  <input type="button" value="Lesser">Lesser
+Text : <br> <input type="Text" name=""> <br>
+<input type= "radio"name= "LU" value=1>Lower <br>
+<input type= "radio"name= "LU" value=2>Upper <br>
+<input type="button" value="Change"> 
+<input type="button" value="trim"> 
+times: <br>
+<input type = "times" id="times"
+<input type="button" value="Loop">
+</body>
+
+</html>
