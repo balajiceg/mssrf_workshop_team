@@ -17,9 +17,9 @@ Number 1:  <br>
   <input type="button" id= "OR"value="OR"><br><br>
   <input type="button" id= "Greater"value="Greater">
   <input type="button" id="Lesser"value="Lesser"><br>
-Text : <br> <input type="Text" name=""> <br>
-<input type= "radio" id="Lower"value=1>Lower <br>
-<input type= "radio"id="Upper"dvalue=2>Upper <br>
+Text : <br> <input type="Text" id="text" name=""> <br>
+<input type= "radio" id="Lower" name="a" >Lower <br>
+<input type= "radio" id="Upper" name="a" >Upper <br>
 <input type="button" id="Change" value="Change"> 
 <input type="button" id="trim" value="trim"> <br>
 times: <br>
@@ -30,5 +30,51 @@ Date: <br>
 
 <input type="button" id="Getday"value="Get Day">
 </body>
+<script src="jquery.min.js" > </script>
+<script type="text/javascript">
+	function add(){
+var num1= $("#num1").val();
+num1=Number(num1);
+var num2= $("#num2").val();
+num2=Number(num2);
+alert(num1+num2)}
+$("#Add").click(add);
+function sub(){
+var num1= $("#num1").val();
+num1=Number(num1);
+var num2= $("#num2").val();
+num2=Number(num2);
+alert(num1-num2)}
+	$("#Sub").click(sub);
+function mul(){
+var num1= $("#num1").val();
+num1=Number(num1);
+var num2= $("#num2").val();
+num2=Number(num2);
+alert(num1*num2)}
+	$("#Mul").click(mul);
+	function comp(){
+owerum1=Number(num1);
+var num2= $("#num2").val();
+num2=Number(num2);
+alert((num1>num2)? num1 : num2)}
+$("#Greater").click(comp);
+function comp2(){
+var num1= $("#num1").val();
+num1=Number(num1);
+var num2= $("#num2").val();
+num2=Number(num2);
+alert((num1<num2)? num1 : num2)}
+$("#Lesser").click(comp2);
+function change(){
+var txt= $("#text").val();
+if ($('#Lower').is(':checked') )
+{ alert (txt.toLowerCase())}
+
+if ($('#Upper').is(':checked') )
+{ alert (txt.toUpperCase())}
+$("#Change").click(change);
+}
+</script>
 
 </html>
