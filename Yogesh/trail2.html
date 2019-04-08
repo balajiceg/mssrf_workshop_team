@@ -47,5 +47,42 @@ Date:<br>
   </body>
 <script type="text/javascript">
  // We are gonna work here
+ var day=prompt("Enter Number")
+var day=Number(day)
+switch (day) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+    default:
+	day = "unwanted";
+}
+alert(day);
+var time=prompt("Enter Number");
+time=Number(time);
+if (time>0) {
+  alert("Positive")}
+ else if (time<0) {
+  alert("Negative")} 
+else {
+  alert("zero")
+}
+
 </script>
 </html>
