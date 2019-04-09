@@ -56,7 +56,21 @@ Date:<br>
 	a=Number(a);
 	var b=$("#num2").val();
 	b=Number(b);
-	alert(a+b);
+	$.ajax({
+			  type: "GET",
+			  url: "http://localhost:3000/add",
+			  data: {
+					'num1':a,
+					'num2':b
+					},
+			   dataType: 'json',
+			  success: function(data){
+			  	alert(data.result);
+			  },
+			  error:function(){
+			  	alert("error");
+			  }
+			});
 }
 $("#1").click(Add);
 

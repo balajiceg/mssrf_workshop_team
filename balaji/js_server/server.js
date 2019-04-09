@@ -6,6 +6,8 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.use(cors())
+
+
 app.get('/add', (req, res) => {
 
 	var num1=req.query.num1;
@@ -16,6 +18,32 @@ app.get('/add', (req, res) => {
 
     res.send({
     	'result':num2+num1
+    });
+});
+
+app.get('/subtract', (req, res) => {
+
+    var num1=req.query.num1;
+    num1=Number(num1);
+
+    var num2=req.query.num2;
+    num2=Number(num2);
+
+    res.send({
+        'result':num2-num1
+    });
+});
+
+app.get('/divide', (req, res) => {
+
+    var num1=req.query.num1;
+    num1=Number(num1);
+
+    var num2=req.query.num2;
+    num2=Number(num2);
+
+    res.send({
+        'result':num2/num1
     });
 });
 
