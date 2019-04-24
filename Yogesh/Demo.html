@@ -14,7 +14,7 @@ Number1:<br>
 <input type="number" id="num1"><br>
 <br>
 Number2:<br>
-<input type="number"id="num1"><br>
+<input type="number"id="num2"><br>
 <br>
     
   <input type="button" id="1" value=Add>
@@ -27,10 +27,10 @@ Number2:<br>
   <input type="button" id="6" value=Greater>
   <input type="button" id="7" value=Lesser><br>
 
-Text: <br><input type="text" id=><br>
+Text: <br><input type="text" id="txt"><br>
 
-<input type="radio" id="8" value=1> Lower<br>
-<input type="radio" id="9" value=2> Upper<br>
+<input type="radio" id="8" name="a"> Lower<br>
+<input type="radio" id="9" name="a"> Upper<br>
 
   <br>
 <input type="button" id="10" value=Change>
@@ -40,14 +40,95 @@ Time:<br>
 <br>
 <input type="button" id="L"value="Loop"><br>
 Date:<br>
-<input type="Date"id="Num"id="Today"><br>
+<input type="Date" id="Today"><br>
 
 <input type="button" value="GetDay"><br>
 <br>
 
   </body>
   <script src="jquery.min.js"></script>
+
+
 <script type="text/javascript">
  // We are gonna work here
+ function Add(){
+	var a=$("#num1").val();
+	a=Number(a);
+	var b=$("#num2").val();
+	b=Number(b);
+	$.ajax({
+			  type: "GET",
+			  url: "http://localhost:3000/add",
+			  data: {
+					'num1':a,
+					'num2':b
+					},
+			   dataType: 'json',
+			  success: function(data){
+			  	alert(data.result);
+			  },
+			  error:function(){
+			  	alert("error");
+			  }
+			});
+}
+$("#1").click(Add);
+
+
+ function Sub(){
+	var a=$("#num1").val();
+	a=Number(a);
+	var b=$("#num2").val();
+	b=Number(b);
+	alert(a-b);
+}
+$("#3").click(Sub);
+
+function Mul(){
+	var a=$("#num1").val();
+	a=Number(a);
+	var b=$("#num2").val();
+	b=Number(b);
+	alert(a*b);
+}
+
+
+$("#2").click(Mul);
+
+
+function Greater(){
+	var a=$("#num1").val();
+	a=Number(a);
+	var b=$("#num2").val();
+	b=Number(b);
+	alert((a>b)?a:b);
+}
+$("#6").click(Greater);
+
+function Lesser(){
+	var a=$("#num1").val();
+	a=Number(a);
+	var b=$("#num2").val();
+	b=Number(b);
+	alert((a<b)?a:b);
+}
+$("#7").click(Lesser);
+
+
+function change(){
+	var txt=$("#txt").val();
+
+	if( $('#8').is(':checked')){
+		alert(txt.toLowerCase())
+	}
+
+	if( $('#9').is(':checked')){
+		alert(txt.toUpperCase())
+	}
+
+
+}
+$("#10").click(change);
+
 </script>
 </html>
