@@ -1,0 +1,8 @@
+# THIS TO REMOVE index.php FROM LINK
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# THIS IS FOR FOLDER ACCESS
+Options -Indexes
